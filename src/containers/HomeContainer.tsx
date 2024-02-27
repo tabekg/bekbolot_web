@@ -6,6 +6,7 @@ const LINKS = [
   {label: 'Обо мне', link: '/about-me'},
   {label: 'Проекты', link: '/projects'},
   {label: 'Навыки', link: '/skills'},
+  {label: 'Резюме', href: '/resume.pdf'},
 ]
 
 function HomeContainer() {
@@ -20,7 +21,11 @@ function HomeContainer() {
         <div>
           {LINKS.map((g, i) => (
             <>
-              <Link className={'text-[#C68E52] hover:bg-amber-50 transition-colors p-2 rounded'} to={g.link}>{g.label}</Link>
+              {g.link ? (
+                <Link className={'text-[#C68E52] hover:bg-amber-50 transition-colors p-2 rounded'} to={g.link}>{g.label}</Link>
+              ) : (
+                <a className={'text-[#C68E52] hover:bg-amber-50 transition-colors p-2 rounded'} href={g.href}>{g.label}</a>
+              )}
               {i + 1 !== LINKS.length ? <span className={'mx-2 text-gray-500'}>•</span> : ''}
             </>
           ))}
