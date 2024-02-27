@@ -4,6 +4,7 @@ import HomeContainer from "./containers/HomeContainer.tsx";
 import AboutMeContainer from "./containers/AboutMeContainer.tsx";
 import ProjectsContainer from "./containers/ProjectsContainer.tsx";
 import ProjectContainer from "./containers/ProjectContainer.tsx";
+import SkillsContainer from "./containers/SkillsContainer.tsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/projects/:slug",
     element: <ProjectContainer/>,
+  },
+  {
+    path: "/skills",
+    element: <SkillsContainer/>,
   },
 ]);
 
