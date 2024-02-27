@@ -31,6 +31,7 @@ function HomeContainer() {
           ))}
         </div>
         <div className={'flex flex-row gap-3'}>
+          <SocialIcon url="https://t.me/tabekg" />
           <SocialIcon url="https://github.com/tabekg" />
           <SocialIcon url="https://instagram.com/bekaaakg" />
           <SocialIcon url="mailto:tabekg@gmail.com" />
