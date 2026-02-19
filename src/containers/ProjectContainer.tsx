@@ -20,13 +20,13 @@ function ProjectContainer() {
   }
 
   return (
-    <div className={"container mx-auto"}>
+    <div className="container mx-auto px-4">
       <div className="my-5">
         <Link to="/projects" className="text-[#C68E52] hover:underline text-sm">
           &larr; Все проекты
         </Link>
       </div>
-      <h1 className="text-3xl mb-5 text-center text-gray-800 drop-shadow">
+      <h1 className="text-3xl mb-5 text-center text-gray-800 font-bold">
         Проект {project.title}
       </h1>
 

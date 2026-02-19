@@ -9,8 +9,8 @@ const PLATFORM_COLORS: Record<string, string> = {
 
 function ProjectsContainer() {
   return (
-    <div className={"container mx-auto"}>
-      <h1 className="text-3xl my-5 text-center text-gray-800 drop-shadow">
+    <div className="container mx-auto px-4">
+      <h1 className="text-3xl my-5 text-center text-gray-800 font-bold">
         Проекты
       </h1>
 
@@ -19,16 +19,16 @@ function ProjectsContainer() {
           <Link
             key={g.slug}
             to={`/projects/${g.slug}`}
-            className={"bg-red-50 rounded overflow-hidden"}
+            className="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
           >
             <img
               alt={g.title}
-              width={"100%"}
-              className={"bg-white aspect-square object-contain object-center"}
+              width="100%"
+              className="bg-gray-50 aspect-square object-contain object-center"
               src={g.image}
             />
-            <div className={"p-3 flex flex-row gap-2 items-center"}>
-              <div>{g.title}</div>
+            <div className="p-3 flex flex-row gap-2 items-center">
+              <div className="font-medium">{g.title}</div>
               {g.platforms.map((l) => (
                 <div
                   key={l}
