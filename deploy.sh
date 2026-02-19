@@ -1,1 +1,1 @@
-cd /var/www/bekbolot/web && git pull && yarn && yarn build
+ssh besoft "cd /var/www/bekbolot/web && git pull && yarn && yarn build"
