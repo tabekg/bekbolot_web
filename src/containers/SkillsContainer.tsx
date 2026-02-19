@@ -3,6 +3,7 @@ import React from "react";
 const SKILLS = [
   [
     "Python",
+    "FastAPI",
     "Flask",
     "Django",
     "Typed Python",
@@ -11,11 +12,19 @@ const SKILLS = [
     "Scheduler",
   ],
   ["PHP", "Laravel", "Lumen"],
-  ["Firebase", "MySQL", "PostgreSQL"],
+  ["PostgreSQL", "MySQL", "Redis", "Firebase"],
   ["React Native", "Mobx", "Redux", "Jotai", "Flutter", "BLoC"],
   ["JavaScript", "TypeScript", "React", "Vite", "Eslint", "Prettier"],
-  ["Linux", "Nginx", "Lets Encrypt", "Docker"],
-  ["Git", "GitHub", "GitLab"],
+  [
+    "WebSocket",
+    "Pusher",
+    "HTTP/2",
+    "AI Integrations",
+    "WhatsApp Web API",
+    "WhatsApp Business API",
+  ],
+  ["Linux", "Nginx", "Docker", "Cloudflare", "Cloudinary", "Let's Encrypt"],
+  ["Git", "GitHub Actions", "GitLab CI/CD"],
   ["HTML", "CSS", "LESS", "SASS"],
 ];
 
