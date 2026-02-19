@@ -1,45 +1,87 @@
-import photo from '../assets/photo.jpg'
-import {SocialIcon} from "react-social-icons";
-import {Link} from "react-router-dom";
+import React from "react";
+import photo from "../assets/photo.jpg";
+import { SocialIcon } from "react-social-icons";
+import { Link } from "react-router-dom";
 
 const LINKS = [
-  {label: 'Обо мне', link: '/about-me'},
-  {label: 'Проекты', link: '/projects'},
-  {label: 'Навыки', link: '/skills'},
-  {label: 'Резюме', href: '/resume.pdf'},
-]
+  { label: "Обо мне", link: "/about-me" },
+  { label: "Проекты", link: "/projects" },
+  { label: "Навыки", link: "/skills" },
+  { label: "Резюме", href: "/resume.pdf" },
+];
 
 function HomeContainer() {
   return (
-    <>
-      <div className="h-screen w-screen flex justify-center items-center flex-col gap-5">
-        <img src={photo} alt={'Bekbolot Tazhibaev'} className={'rounded-full w-32 border'}/>
-        <h1 className="text-3xl text-center text-gray-800 drop-shadow">
-          Бекболот Тажибаев
-        </h1>
-        <div className={'text-center text-gray-600'}>Full Stack разработчик с опытом более 6 лет.</div>
-        <div>
-          {LINKS.map((g, i) => (
-            <>
-              {g.link ? (
-                <Link className={'text-[#C68E52] hover:bg-amber-50 transition-colors p-2 rounded'} to={g.link}>{g.label}</Link>
-              ) : (
-                <a className={'text-[#C68E52] hover:bg-amber-50 transition-colors p-2 rounded'} href={g.href}>{g.label}</a>
-              )}
-              {i + 1 !== LINKS.length ? <span className={'mx-2 text-gray-500'}>•</span> : ''}
-            </>
-          ))}
-        </div>
-        <div className={'flex flex-row gap-3'}>
-          <SocialIcon url="https://t.me/tabekg" />
-          <SocialIcon url="https://github.com/tabekg" />
-          <SocialIcon url="https://instagram.com/bekaaakg" />
-          <SocialIcon url="mailto:tabekg@gmail.com" />
-          <SocialIcon url="https://wa.me/996777171171" network={'whatsapp'} />
-        </div>
+    <div className="h-screen w-screen flex justify-center items-center flex-col gap-5">
+      <img
+        src={photo}
+        alt={"Bekbolot Tazhibaev"}
+        className={"rounded-full w-32 border"}
+      />
+      <h1 className="text-3xl text-center text-gray-800 drop-shadow">
+        Бекболот Тажибаев
+      </h1>
+      <div className={"text-center text-gray-600"}>
+        Full Stack разработчик с опытом более 6 лет.
       </div>
-    </>
-  )
+      <div>
+        {LINKS.map((g, i) => (
+          <React.Fragment key={g.label}>
+            {g.link ? (
+              <Link
+                className={
+                  "text-[#C68E52] hover:bg-amber-50 transition-colors p-2 rounded"
+                }
+                to={g.link}
+              >
+                {g.label}
+              </Link>
+            ) : (
+              <a
+                className={
+                  "text-[#C68E52] hover:bg-amber-50 transition-colors p-2 rounded"
+                }
+                href={g.href}
+              >
+                {g.label}
+              </a>
+            )}
+            {i + 1 !== LINKS.length && (
+              <span className={"mx-2 text-gray-500"}>•</span>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
+      <div className={"flex flex-row gap-3"}>
+        <SocialIcon
+          url="https://t.me/tabekg"
+          title="Telegram"
+          target="_blank"
+          rel="noopener noreferrer"
+        />
+        <SocialIcon
+          url="https://github.com/tabekg"
+          title="GitHub"
+          target="_blank"
+          rel="noopener noreferrer"
+        />
+        <SocialIcon
+          url="https://instagram.com/bekaaakg"
+          title="Instagram"
+          target="_blank"
+          rel="noopener noreferrer"
+        />
+        <SocialIcon url="mailto:tabekg@gmail.com" title="Email" />
+        <SocialIcon
+          url="https://wa.me/996777171171"
+          network={"whatsapp"}
+          title="WhatsApp"
+          target="_blank"
+          rel="noopener noreferrer"
+        />
+      </div>
+    </div>
+  );
 }
 
-export default HomeContainer
+export default HomeContainer;

@@ -1,32 +1,48 @@
-import {Link} from "react-router-dom";
-import {PROJECTS} from "../config.tsx";
+import { Link } from "react-router-dom";
+import { PROJECTS } from "../config.tsx";
+
+const PLATFORM_COLORS: Record<string, string> = {
+  ios: "border-blue-400 text-blue-600 bg-blue-50",
+  android: "border-green-400 text-green-600 bg-green-50",
+  web: "border-purple-400 text-purple-600 bg-purple-50",
+};
 
 function ProjectsContainer() {
   return (
-    <>
-      <div className={'container mx-auto'}>
-        <h1 className="text-3xl my-5 text-center text-gray-800 drop-shadow">
-          Проекты
-        </h1>
+    <div className={"container mx-auto"}>
+      <h1 className="text-3xl my-5 text-center text-gray-800 drop-shadow">
+        Проекты
+      </h1>
 
-        <div className="grid xl:grid-cols-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {PROJECTS.map(g => (
-            <>
-
-              <Link to={`/projects/${g.slug}`} className={'bg-red-50 rounded overflow-hidden'}>
-                <img alt={g.title} width={'100%'} className={'bg-white aspect-square object-contain object-center'} src={g.image}/>
-                <div className={'p-3 flex flex-row gap-3'}>
-                  <div>{g.title}</div>
-                  {g.platforms.map(l => <div className={'p-1 px-3 text-xs rounded-full border'}>{l.toUpperCase()}</div>)}
+      <div className="grid xl:grid-cols-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {PROJECTS.map((g) => (
+          <Link
+            key={g.slug}
+            to={`/projects/${g.slug}`}
+            className={"bg-red-50 rounded overflow-hidden"}
+          >
+            <img
+              alt={g.title}
+              width={"100%"}
+              className={"bg-white aspect-square object-contain object-center"}
+              src={g.image}
+            />
+            <div className={"p-3 flex flex-row gap-2 items-center"}>
+              <div>{g.title}</div>
+              {g.platforms.map((l) => (
+                <div
+                  key={l}
+                  className={`p-1 px-3 text-xs rounded-full border ${PLATFORM_COLORS[l] || ""}`}
+                >
+                  {l.toUpperCase()}
                 </div>
-              </Link>
-
-            </>
-          ))}
-        </div>
+              ))}
+            </div>
+          </Link>
+        ))}
       </div>
-    </>
-  )
+    </div>
+  );
 }
 
-export default ProjectsContainer
+export default ProjectsContainer;
